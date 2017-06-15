@@ -48,7 +48,7 @@ always@(posedge clk or posedge rst)begin
 				MemWrite  = 0;
 				ALUSrcA   = 0;
 				IorD      = 0;
-				IRWrite   = 1;
+				IRWrite   = 0;
 				ALUSrcB   = 2'b01;
 				ALUOp     = 2'b00;
 				PCWrite   = 0;
@@ -62,6 +62,7 @@ always@(posedge clk or posedge rst)begin
 				nextstate = 11;
 			end
 			1:	begin
+				IRWrite   = 0;
 				PCWrite   = 0;
 				ALUSrcA   = 0;
 				ALUSrcB   = 2'b11;
@@ -86,6 +87,7 @@ always@(posedge clk or posedge rst)begin
 			3: begin
 				MemRead   = 1;
 				MemWrite  = 0;
+				ALUoutCtrl= 1;
 				IorD      = 1;
 				IRWrite   = 0;
 				nextstate = 4;
@@ -93,6 +95,7 @@ always@(posedge clk or posedge rst)begin
 			4: begin
 				RegDst    = 0;
 				RegWrite  = 1;
+				ALUoutCtrl= 0;
 				MemtoReg  = 1;
 				nextstate = 0;
 			end
@@ -100,18 +103,21 @@ always@(posedge clk or posedge rst)begin
 				MemWrite  = 1;
 				MemRead   = 0;
 				IorD      = 1;
-				nextstate = 4;
+				ALUoutCtrl= 1;
+				nextstate = 0;
 			end
 			6:	begin
 				ALUSrcA   = 1;
 				ALUSrcB   = 2'b00;
 				ALUOp     = 2'b10;
+				ALUoutCtrl= 1;
 				nextstate = 7;
 			end
 			7: begin
 				RegDst    = 1;
 				RegWrite  = 1;
 				MemtoReg  = 0;
+				ALUoutCtrl= 0;
 				nextstate = 0;
 			end
 			8:	begin
@@ -140,6 +146,7 @@ always@(posedge clk or posedge rst)begin
 				nextstate = 1;
 			end
 			11:begin
+				IRWrite   = 1;
 				PCWrite   = 1;
 				ALUoutCtrl= 0;
 				nextstate = 1;
