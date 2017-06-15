@@ -40,7 +40,7 @@ wire [31:0] ALUOutResult;
 wire ALUZero;
 wire ALUZP;
 wire PCCtrl;
-wire IorDMUXToMenmory;
+wire[31:0] IorDMUXToMenmory;
 and u1(ALUZP, PCWriteCond, ALUZero);
 or  u2(PCCtrl, ALUZP, PCWrite);
 
@@ -52,7 +52,7 @@ wire [31:0] instr;
 wire [31:0] MDROut;
 wire [31:0] IROut;
 wire [31:0] Wdata;
-Memory       Instruction(.clka(clk), .rsta(rst) , .wea(MemWrite),
+memory_final  Instruction(.clka(clk), .rsta() , .wea(MemWrite),
               .addra(IorDMUXToMenmory), .dina(Wdata), .douta(instr));
 tempRegister IR(.data_in(instr), .data_out(IROut), .ctrl(IRWrite));
 tempRegister MDR(.data_in(instr), .data_out(MDROut), .ctrl(1'b1));
@@ -91,12 +91,11 @@ mux4_1      ALUMUXB(.A(Wdata), .B(3'b100), .C(extendOut), .D(shiftToMUX4_1), .Ct
 
 wire [2:0] ALU_operation;
 wire [31:0] res;
-wire [31:0] resOut;
 ALUctrl     ALUcontrol(.aluop(ALUop), .ALU_operation(ALU_operation), .inst(IROut[5:0]));
 ALU         ALUpart(.A(ALUInA), .B(ALUInB), .ALU_operation(ALU_operation), .res(res), .zero(ALUZero), .overflow());
 
-tempRegister ALUout(.data_in(res), .data_out(resOut), .ctrl(1'b1));
-mux4_1       finalMUX(.A(res), .B(resOut), .C(combineTpMux4_1), .D(), .Ctrl(PCSource), .S(finalSelectResult));
+tempRegister ALUout(.data_in(res), .data_out(ALUOutResult), .ctrl(1'b1));
+mux4_1       finalMUX(.A(res), .B(ALUOutResult), .C(combineTpMux4_1), .D(), .Ctrl(PCSource), .S(finalSelectResult));
 
 ////////////CPU Ctrl//////////////////
 CPU_ctrl    CPU(.clk(clk), .rst(rst), .inst(IROut[31:26]), 
@@ -104,7 +103,7 @@ CPU_ctrl    CPU(.clk(clk), .rst(rst), .inst(IROut[31:26]),
 					 .ALUSrcA(ALUSrcA), .ALUSrcB(ALUSrcB),
 					 .ALUop(ALUop), .PCSource(PCSource),
 					 .PCWriteCond(PCWriteCond), .PCWrite(PCWrite),
-					 .lorD(lorD), .MemRead(MemRead),
+					 .lorD(IorD), .MemRead(MemRead),
 					 .MemWrite(MemWrite), .MemtoReg(MemtoReg),
 					 .IRWrite(IRWrite));
 endmodule
