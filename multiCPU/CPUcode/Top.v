@@ -62,7 +62,7 @@ tempRegister MDR(.data_in(instr), .data_out(MDROut), .ctrl(1'b1));
 wire [5:0] IRMUXOut;
 wire [31:0] MDRMUXOut;
 mux2_1       IRMUX(.A(IROut[20:16]), .B(IROut[15:11]), .Ctrl(RegDst), .S(IRMUXOut));
-mux2_1       MDRMUX(.A(MDROut), .B(ALUOutResult), .Ctrl(MemToReg), .S(MDRMUXOut));
+mux2_1       MDRMUX(.A(ALUOutResult), .B(MDROut), .Ctrl(MemToReg), .S(MDRMUXOut));
 
 /////////Register Part//////////////////
 wire [31:0] Rdata1;
