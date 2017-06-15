@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Top(input wire clk, input wire rst);
+module Top(input wire clk, input wire rst, input wire [31:0] input_address, output wire [31:0] output_data);
 wire PCWriteCond;
 wire PCWrite;
 wire IorD;
@@ -69,9 +69,9 @@ wire [31:0] Rdata2;
 wire [31:0] extendOut;
 wire [31:0] shiftToMUX4_1;
 register_file r1(.clk(clk), .rst(rst), .reg_R_addr_A(IROut[25:21]),
-                 .reg_R_addr_B(IROut[20:16]), .reg_R_addr_C(),
+                 .reg_R_addr_B(IROut[20:16]), .reg_R_addr_C(input_address),
 					  .reg_W_addr(IRMUXOut),  .wdata(MDRMUXOut), .reg_we(RegWrite),
-					  .rdata_A(Rdata1), .rdata_B(Rdata2), .rdata_C());
+					  .rdata_A(Rdata1), .rdata_B(Rdata2), .rdata_C(output_data));
 single_signext signExtend(.i_16(IROut[15:0]), .o_32(extendOut));
 leftShift2Bits leftShift(.data_in(extendOut), .data_out(shiftToMUX4_1));
 
