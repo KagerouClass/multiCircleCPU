@@ -1,0 +1,2 @@
+vhdtdtfi -lib work D:/ISEprogram/Exp05/2017.06.15/Framework_final/mux2_1_1.v -lang verilog -prj Framework -o mux2_1_1.spl -module mux2_1_1 -template D:/XLI/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family kintex7 mux2_1_1.spl D:/ISEprogram/Exp05/2017.06.15/Framework_final/mux2_1_1.sym 

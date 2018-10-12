@@ -1,0 +1,6 @@
+vhdtdtfi -lib work D:/ISEprogram/Exp05/2017.06.15/Framework_final/CPUcode/Top.v -lang verilog -prj Framework -o Top.spl -module Top -template D:/XLI/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family kintex7 Top.spl D:/ISEprogram/Exp05/2017.06.15/Framework_final/Top.sym 
+vhdtdtfi -lib work D:/ISEprogram/Exp05/2017.06.15/Framework_final/CPUcode/Top.v -lang verilog -prj Framework -o Top.spl -module Top -template D:/XLI/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family kintex7 Top.spl D:/ISEprogram/Exp05/2017.06.15/Framework_final/Top.sym 
+vhdtdtfi -lib work D:/ISEprogram/Exp05/2017.06.15/Framework_final/CPUcode/Top.v -lang verilog -prj Framework -o Top.spl -module Top -template D:/XLI/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family kintex7 Top.spl D:/ISEprogram/Exp05/2017.06.15/Framework_final/Top.sym 

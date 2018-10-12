@@ -1,0 +1,15 @@
+[Inputs]
+clk
+rst
+=input_address[4:0]=
+[Outputs]
+LED0
+LED1
+LED2
+LED3
+LED4
+=output_data[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel Top
+

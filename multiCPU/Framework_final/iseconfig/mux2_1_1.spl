@@ -1,0 +1,10 @@
+[Inputs]
+A
+B
+Ctrl
+[Outputs]
+S
+[BiDir]
+[ATTRIBUTES]
+VeriModel mux2_1_1
+

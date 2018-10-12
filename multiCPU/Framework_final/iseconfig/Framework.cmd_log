@@ -1,0 +1,39 @@
+xst -intstyle ise -ifn "F:/hardsoftProgram/mode/Exp08_ADC32fix/iseconfig/Framework.xst" -ofn "F:/hardsoftProgram/mode/Exp08_ADC32fix/iseconfig/Framework.syr" 
+xst -intstyle ise -ifn "F:/hardsoftProgram/mode/Exp08_ADC32fix/iseconfig/Framework.xst" -ofn "F:/hardsoftProgram/mode/Exp08_ADC32fix/iseconfig/Framework.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../code -nt timestamp -uc F:/hardsoftProgram/mode/Exp08_ADC32fix/code/Framework.ucf -p xc7k160t-ffg676-2L Framework.ngc Framework.ngd  
+map -intstyle ise -p xc7k160t-ffg676-2L -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Framework_map.ncd Framework.ngd Framework.pcf 
+par -w -intstyle ise -ol high -mt off Framework_map.ncd Framework.ncd Framework.pcf 
+trce -intstyle ise -v 3 -s 2L -n 3 -fastpaths -xml Framework.twx Framework.ncd -o Framework.twr Framework.pcf 
+bitgen -intstyle ise -f Framework.ut Framework.ncd 
+bitgen -intstyle ise -f Framework.ut Framework.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ../code -nt timestamp -uc F:/hardsoftProgram/mode/Exp08_ADC32fix/code/Framework.ucf -p xc7k160t-ffg676-2L Framework.ngc Framework.ngd  
+map -intstyle ise -p xc7k160t-ffg676-2L -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Framework_map.ncd Framework.ngd Framework.pcf 
+par -w -intstyle ise -ol high -mt off Framework_map.ncd Framework.ncd Framework.pcf 
+trce -intstyle ise -v 3 -s 2L -n 3 -fastpaths -xml Framework.twx Framework.ncd -o Framework.twr Framework.pcf 
+xst -intstyle ise -ifn "F:/hardsoftProgram/mode/Exp08_ADC32fix/iseconfig/Framework.xst" -ofn "F:/hardsoftProgram/mode/Exp08_ADC32fix/iseconfig/Framework.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../code -nt timestamp -uc F:/hardsoftProgram/mode/Exp08_ADC32fix/code/Framework.ucf -p xc7k160t-ffg676-2L Framework.ngc Framework.ngd  
+map -intstyle ise -p xc7k160t-ffg676-2L -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Framework_map.ncd Framework.ngd Framework.pcf 
+par -w -intstyle ise -ol high -mt off Framework_map.ncd Framework.ncd Framework.pcf 
+trce -intstyle ise -v 3 -s 2L -n 3 -fastpaths -xml Framework.twx Framework.ncd -o Framework.twr Framework.pcf 
+bitgen -intstyle ise -f Framework.ut Framework.ncd 
+xst -intstyle ise -ifn "F:/hardsoftProgram/Exp08_ADC32fix/iseconfig/Framework.xst" -ofn "F:/hardsoftProgram/Exp08_ADC32fix/iseconfig/Framework.syr" 
+xst -intstyle ise -ifn "F:/hardsoftProgram/Exp08_ADC32fix/iseconfig/Framework.xst" -ofn "F:/hardsoftProgram/Exp08_ADC32fix/iseconfig/Framework.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../code -nt timestamp -uc F:/hardsoftProgram/Exp08_ADC32fix/code/Framework.ucf -p xc7k160t-ffg676-2L Framework.ngc Framework.ngd  
+map -intstyle ise -p xc7k160t-ffg676-2L -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Framework_map.ncd Framework.ngd Framework.pcf 
+par -w -intstyle ise -ol high -mt off Framework_map.ncd Framework.ncd Framework.pcf 
+trce -intstyle ise -v 3 -s 2L -n 3 -fastpaths -xml Framework.twx Framework.ncd -o Framework.twr Framework.pcf 
+bitgen -intstyle ise -f Framework.ut Framework.ncd 
+xst -intstyle ise -ifn "C:/ISEprogram/Framework_final/iseconfig/Framework.xst" -ofn "C:/ISEprogram/Framework_final/iseconfig/Framework.syr" 
+xst -intstyle ise -ifn "C:/ISEprogram/Framework_final/iseconfig/Framework.xst" -ofn "C:/ISEprogram/Framework_final/iseconfig/Framework.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../code -nt timestamp -uc C:/ISEprogram/Framework_final/code/Framework.ucf -p xc7k160t-ffg676-2L Framework.ngc Framework.ngd  
+map -intstyle ise -p xc7k160t-ffg676-2L -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Framework_map.ncd Framework.ngd Framework.pcf 
+par -w -intstyle ise -ol high -mt off Framework_map.ncd Framework.ncd Framework.pcf 
+trce -intstyle ise -v 3 -s 2L -n 3 -fastpaths -xml Framework.twx Framework.ncd -o Framework.twr Framework.pcf 
+bitgen -intstyle ise -f Framework.ut Framework.ncd 
+xst -intstyle ise -ifn "D:/ISEprogram/Exp05/2017.06.15/Framework_final/iseconfig/Framework.xst" -ofn "D:/ISEprogram/Exp05/2017.06.15/Framework_final/iseconfig/Framework.syr" 
+xst -intstyle ise -ifn "D:/ISEprogram/Exp05/2017.06.15/Framework_final/iseconfig/Framework.xst" -ofn "D:/ISEprogram/Exp05/2017.06.15/Framework_final/iseconfig/Framework.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ../code -sd ../ipcore_dir -nt timestamp -uc D:/ISEprogram/Exp05/2017.06.15/Framework_final/code/Framework.ucf -p xc7k160t-ffg676-2L Framework.ngc Framework.ngd  
+map -intstyle ise -p xc7k160t-ffg676-2L -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o Framework_map.ncd Framework.ngd Framework.pcf 
+par -w -intstyle ise -ol high -mt off Framework_map.ncd Framework.ncd Framework.pcf 
+trce -intstyle ise -v 3 -s 2L -n 3 -fastpaths -xml Framework.twx Framework.ncd -o Framework.twr Framework.pcf 
+bitgen -intstyle ise -f Framework.ut Framework.ncd 

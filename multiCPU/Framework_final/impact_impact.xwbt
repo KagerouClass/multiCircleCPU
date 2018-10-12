@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\ISEprogram\Framework_final\impact.xsl
+OUTFILE=C:\ISEprogram\Framework_final\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=C:\ISEprogram\Framework_final
+LICENSE=iMPACT
+USER_INFO=iMPACT
